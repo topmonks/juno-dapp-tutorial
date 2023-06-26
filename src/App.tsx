@@ -7,6 +7,7 @@ import { assets, chains } from "chain-registry";
 
 import { theme } from "./chakra-theme";
 import { ENABLED_MAINNETS, ENABLED_TESTNETS, MAINNET, TESTNET } from "./config";
+import SelectChain from "./components/select-chain";
 
 const WalletButton = lazy(() => import("./components/wallet-button"));
 
@@ -29,6 +30,7 @@ function App() {
         >
           <Flex gap={2} p={2}>
             <Suspense fallback={<Spinner />}>
+              <SelectChain />
               <WalletButton />
             </Suspense>
           </Flex>
